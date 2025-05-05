@@ -1,7 +1,7 @@
 # 🌐 AllCodeHub
 
 Welcome to **AllCodeHub** – a centralized platform for developers and tech enthusiasts to access well-structured roadmaps, curated resources, and learning materials across various domains of computer science and software development.
-<img src="" alt="Cover Image" style="width:100%;"/>
+<img src="Screenshot 2025-05-05 204104.jpg" alt="Cover Image" style="width:100%;"/>
 🔗 **Live Website**: [https://allcodehub.netlify.app](https://allcodehub.netlify.app)
 
 ---
