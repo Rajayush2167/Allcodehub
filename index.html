@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AllCodeHub</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+     .footer {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .footer span {
+    color: #00ffff;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .footer span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #00ffff;
+    left: 0;
+    bottom: -4px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+  }
+
+  .footer span:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+     body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6eb;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .interview-section {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #ffe3e8;
+      border-radius: 16px;
+      box-shadow: inset 0 0 10px rgba(255, 200, 210, 0.4);
+      overflow-x: auto;
+    }
+
+    .interview-section h2 {
+      text-align: center;
+      color: #d6336c;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+
+    .question-category {
+      background-color: #ffd5dd;
+      border-radius: 20px;
+      padding: 1.5rem;
+      min-width: 280px;
+      flex: 0 0 auto;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .question-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .question-category h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #5c1a1a;
+    }
+
+    .question-category ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    .question-category li {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.6rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #ff5c8a;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      background-color: #e44c78;
+    }
+    @keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.course-card:hover .card img {
+  animation: rotateIcon 2s linear infinite;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: #0f0f0f;
+      color: #ffffff;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      gap: 2rem;
+    }
+
+    .robot {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    .robot video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+
+    .content {
+      flex: 1;
+      max-width: 500px;
+      min-width: 300px;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffffff, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .content p.quote {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-left: 4px solid #00ffff;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #cccccc;
+    }
+
+    .features ul {
+      padding-left: 1rem;
+    }
+
+    .features ul li {
+      list-style: square;
+    }
+    body {
+      margin: 0;
+      background-color: #f9cfd5;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .floating-text {
+      position: absolute;
+      font-size: 24px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.15);
+      white-space: nowrap;
+      z-index: 0;
+      animation: floatMove 20s linear infinite;
+    }
+
+    @keyframes floatMove {
+      0% { transform: translateY(100vh) translateX(-50vw); }
+      100% { transform: translateY(-100vh) translateX(50vw); }
+    }
+
+    .dashboard {
+      position: relative;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px #e4a6ae;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      z-index: 1;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .sidebar, .content {
+      background-color: #ffe4e8;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 5px 5px 15px #dca7b0;
+    }
+
+    .chart-bar {
+      background: #f0627d;
+      height: 100px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+
+    .card {
+      background: #ffcfdc;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: inset 2px 2px 6px #ffb0c2;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 120px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9em;
+      box-shadow: 2px 2px 6px #c59ca5;
+    }
+
+    .btn-info {
+      background-color: #f0627d;
+    }
+
+    .btn-download {
+      background-color: #ffab40;
+    }
+
+    .top-bar {
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      box-shadow: 3px 3px 8px #dba5b0;
+      width: 60%;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    footer {
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 30px;
+      animation: floatMove 15s linear infinite;
+      z-index: 0;
+    }
+
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      background-color: #f0627d;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #scroll-up {
+      bottom: 80px;
+    }
+
+    #scroll-down {
+      bottom: 20px;
+    }
+    .profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+  perspective: 1500px;
+}
+
+.profile-card-3d {
+  width: 320px;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  cursor: pointer;
+}
+
+.profile-card-3d:hover {
+  transform: rotateY(180deg) scale(1.02);
+}
+
+.card-inner-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card-front-3d,
+.card-back-3d {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #fce3ec, #ffe6f0);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.card-front-3d::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  animation: rotateShine 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateShine {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card-back-3d {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #ffe0ec, #fcd1db);
+}
+
+.profile-image-3d {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.card-front-3d:hover .profile-image-3d {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-front-3d h2,
+.card-back-3d h3 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #333;
+  z-index: 1;
+}
+
+.card-front-3d p,
+.card-back-3d p {
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+  z-index: 1;
+}
+.btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Optional: Give distinct hover colors for better feedback */
+.btn-info:hover {
+  background-color: #e2506e;
+}
+
+.btn-download:hover {
+  background-color: #ff9900;
+}
+.btn:active {
+  transform: scale(0.98);
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+}
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.robot-gif-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.robot-container {
+  flex: 1 1 200px;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot-gif {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card-3d {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+.profile-image-3d {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.robot-gif {
+  width: 100%;
+  max-width: 250px; /* was 200px */
+  height: auto;
+  object-fit: contain;
+}
+
+.profile-image-3d {
+  width: 180px; /* was 150px */
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.site-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #4fc3f7, 0 0 20px #4fc3f7;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+}
+
+.site-header h1:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px #4fc3f7, 0 0 30px #81d4fa;
+}
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .social-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .section h2 {
+      width: 100%;
+      text-align: center;
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      background: #1e293b;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s ease;
+      cursor: default;
+      position: relative;
+    }
+
+    .item:hover {
+      transform: scale(1.1);
+      background: #334155;
+    }
+
+    .arrow {
+      font-size: 2rem;
+      color: #38bdf8;
+      animation: moveArrow 1s infinite alternate;
+    }
+
+    @keyframes moveArrow {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(8px); }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        flex-direction: column;
+      }
+
+      .arrow {
+        animation: moveArrowY 1s infinite alternate;
+        transform: rotate(90deg);
+      }
+
+      @keyframes moveArrowY {
+        0% { transform: rotate(90deg) translateY(0); }
+        100% { transform: rotate(90deg) translateY(8px); }
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      margin: 0;
+      padding: 20px;
+      color: #e0e0e0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff; }
+      100% { text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff; }
+    }
+
+    .languages-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .language-box {
+      background-color: #1e1e1e;
+      border: 2px solid #333;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    }
+
+    .language-box:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #2d2d2d, #202020);
+      border-color: #00bfff;
+      box-shadow: 0 0 25px #00bfff, 0 0 40px #00bfff;
+    }
+
+    .language-box h3 {
+      margin: 10px 0 0;
+      font-size: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 5px #00bfff;
+    }
+
+    .language-box img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      background-color: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .btn-info:hover {
+      background-color: rgba(33, 150, 243, 0.2);
+      border-color: #2196F3;
+      box-shadow: 0 0 10px #2196F3, 0 0 20px #2196F3;
+    }
+
+    .btn-download:hover {
+      background-color: rgba(76, 175, 80, 0.2);
+      border-color: #4CAF50;
+      box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    }
+    .languages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.language-box {
+  background-color: #1e1e1e;
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.language-box h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 10px 0;
+  text-shadow: 0 0 5px #00bfff;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease;
+  color: white;
+  background: transparent;
+}
+
+.btn-info:hover {
+  background-color: rgba(33, 150, 243, 0.2);
+  border-color: #2196F3;
+  box-shadow: 0 0 10px #2196F3;
+}
+
+.btn-download:hover {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px #4CAF50;
+}
+
+@media (max-width: 600px) {
+  .languages-container {
+    grid-template-columns: 1fr; /* one column on phones */
+  }
+
+  .language-box img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .language-box h3 {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            padding-top: 80px;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(17, 17, 17, 0.95);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #0ff3;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+            transition: text-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 15px #0ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0ff;
+            text-shadow: 0 0 5px #0ff;
+        }
+
+        /* Glow Effect */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #0ff;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px #0ff;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: #0ff;
+            font-size: 1.8rem;
+            text-shadow: 0 0 5px #0ff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(17, 17, 17, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                border-top: 1px solid #0ff3;
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.show {
+                transform: translateY(0);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 1px solid #333;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+  </style>
+</head>
+<body>
+  <nav>
+        <div class="nav-container">
+            <div class="logo">AllCodeHub</div>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="#roadmap">Roadmap</a>
+                <a href="#interview-pdf">Interview PDF</a>
+                <a href="#courses-pdf">Courses PDF</a>
+            </div>
+        </div>
+       
+    </nav>
+
+    <!-- Page content -->
+    
+
+  <div id="particles-js"></div>
+    <header class="site-header">
+        <h1>AllCodeHub</h1>
+      </header>
+      <div class="section-wrapper">
+        <!-- Robot GIFs Section -->
+        <div class="robot-gif-grid">
+          <div class="robot-container">
+            <img src="./Images/programming-window-coding-hell-unscreen.gif" alt="Animated Robot" class="robot-gif" />
+          </div>
+          <div class="robot-container">
+            <img src="./Images/e4d395849317f98f2a418c0e10182b-unscreen.gif" alt="Animated Robot" class="robot-gif" />
+          </div>
+          <div class="robot-container">
+            <img src="./Images/158549-816999843-small-unscreen.gif" alt="Animated Robot" class="robot-gif" />
+          </div>
+        
+        </div>
+      
+        <!-- Profile Section -->
+        <div class="profile-section">
+          <div class="profile-card-3d">
+            <div class="card-inner-3d">
+              <div class="card-front-3d">
+                <img src="./Images/WhatsApp Image 2025-05-01 at 12.33.32_6a4f62f1.jpg" alt="Profile Image" class="profile-image-3d" />
+                <h2>Raj Ayush</h2>
+                <p><b>Software Developer</b></p>
+                <p><b>I am providing you with the best programming resources for your future plans. You can view and download them as needed.</b></p>
+                
+                
+                <section id="boot-error">
+                  <img src="" alt="" style="max-width:20%; height:auto;">
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+</section>
+<section class="social-icons">
+  <a href="https://github.com/Rajayush2167" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+  </a>
+  <a href="https://www.linkedin.com/in/raj-ayush-71b45b231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+  </a>
+  <a href="https://leetcode.com/u/rajayush2167/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode">
+  </a>
+  <a href="https://www.instagram.com/rajayush2167?igsh=MWdkOTB5a3VkOGFqMA== " target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
+</section>
+<section id="roadmap">
+<h1>🚀 Developer full Roadmap</h1>
+
+<div class="roadmap">
+
+  <!-- Frontend Section -->
+  <div class="section frontend">
+    <h2>Frontend</h2>
+    <div class="item" title="Structure your content">HTML</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Style your content">CSS</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Add interactivity">JavaScript</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Build UI components">React</div>
+    <div class="arrow">→</div>
+    <div class="item" title="State management">Redux</div>
+  </div>
+
+  <!-- Backend Section -->
+  <div class="section backend">
+    <h2>Backend</h2>
+    <div class="item" title="JavaScript runtime">Node.js</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Web framework">Express.js</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Create REST APIs">API Development</div>
+    <div class="arrow">→</div>
+    <div class="item" title="PHP web framework">Laravel</div>
+  </div>
+  <div class="section fullstack">
+    <h2>Full-Stack Development</h2>
+    <div class="item">HTML / CSS / JavaScript</div>
+    <div class="arrow">→</div>
+    <div class="item">Frontend Framework (React / Vue)</div>
+    <div class="arrow">→</div>
+    <div class="item">Backend (Node.js / Laravel / Django)</div>
+    <div class="arrow">→</div>
+    <div class="item">Databases (MySQL / MongoDB)</div>
+    <div class="arrow">→</div>
+    <div class="item">REST APIs / GraphQL</div>
+    <div class="arrow">→</div>
+    <div class="item">Authentication / JWT / OAuth</div>
+    <div class="arrow">→</div>
+    <div class="item">Deployment (Docker / CI-CD / Cloud)</div>
+  </div>
+  
+
+  <!-- Database & DevOps -->
+  <div class="section devops">
+    <h2>Database & DevOps</h2>
+    <div class="item" title="Database storage">MongoDB / MySQL</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Containerization">Docker</div>
+    <div class="arrow">→</div>
+    <div class="item" title="Version control & CI/CD">GitHub / CI/CD</div>
+  </div>
+
+  <!-- DSA Section -->
+  <div class="section dsa">
+    <h2>Data Structures & Algorithms</h2>
+    <div class="item">Time & Space Complexity</div>
+    <div class="arrow">→</div>
+    <div class="item">Arrays / Linked Lists</div>
+    <div class="arrow">→</div>
+    <div class="item">Stacks / Queues / Recursion</div>
+    <div class="arrow">→</div>
+    <div class="item">Trees / Graphs</div>
+    <div class="arrow">→</div>
+    <div class="item">Sorting / Searching / DP</div>
+    <div class="arrow">→</div>
+    <div class="item">Greedy / Backtracking / Sliding Window</div>
+  </div>
+
+  <!-- OS Section -->
+  <div class="section os">
+    <h2>Operating Systems</h2>
+    <div class="item">Processes & Threads</div>
+    <div class="arrow">→</div>
+    <div class="item">Paging / Segmentation</div>
+    <div class="arrow">→</div>
+    <div class="item">Deadlock / Scheduling</div>
+    <div class="arrow">→</div>
+    <div class="item">File Systems</div>
+    <div class="arrow">→</div>
+    <div class="item">System Calls / Virtual Memory</div>
+    <div class="arrow">→</div>
+    <div class="item">Multithreading / I/O / Interrupts</div>
+  </div>
+
+  <!-- CN Section -->
+  <div class="section cn">
+    <h2>Computer Networking</h2>
+    <div class="item">OSI / TCP-IP Layers</div>
+    <div class="arrow">→</div>
+    <div class="item">IP / MAC / DNS</div>
+    <div class="arrow">→</div>
+    <div class="item">HTTP / HTTPS / SSL</div>
+    <div class="arrow">→</div>
+    <div class="item">Subnetting / TCP vs UDP</div>
+    <div class="arrow">→</div>
+    <div class="item">NAT / DHCP / Routing</div>
+    <div class="arrow">→</div>
+    <div class="item">Firewall / VPN / Devices</div>
+  </div>
+
+  <!-- Cybersecurity Section -->
+  <div class="section cybersecurity">
+    <h2>Cybersecurity</h2>
+    <div class="item">Authentication / Authorization</div>
+    <div class="arrow">→</div>
+    <div class="item">SQL Injection / XSS</div>
+    <div class="arrow">→</div>
+    <div class="item">OWASP / HTTPS / Encryption</div>
+    <div class="arrow">→</div>
+    <div class="item">Symmetric / Asymmetric Encryption</div>
+    <div class="arrow">→</div>
+    <div class="item">Hashing / PKI</div>
+    <div class="arrow">→</div>
+    <div class="item">Pen Testing / Firewalls / IDS</div>
+  </div>
+
+  <div class="section aiml">
+    <h2>AI / ML</h2>
+    <div class="item">Python / NumPy / Pandas</div>
+    <div class="arrow">→</div>
+    <div class="item">Statistics / Linear Algebra / Calculus</div>
+    <div class="arrow">→</div>
+    <div class="item">Data Preprocessing / EDA</div>
+    <div class="arrow">→</div>
+    <div class="item">Supervised / Unsupervised Learning</div>
+    <div class="arrow">→</div>
+    <div class="item">Model Evaluation / Tuning</div>
+    <div class="arrow">→</div>
+    <div class="item">Deep Learning (Neural Networks, CNN, RNN)</div>
+    <div class="arrow">→</div>
+    <div class="item">Deployment (Flask / FastAPI / Docker)</div>
+  </div>
+  <div class="section android">
+  <h2>Android Development</h2>
+  <div class="item">Java / Kotlin</div>
+  <div class="arrow">→</div>
+  <div class="item">Android Studio / Gradle</div>
+  <div class="arrow">→</div>
+  <div class="item">UI Design / XML Layouts</div>
+  <div class="arrow">→</div>
+  <div class="item">Activities / Fragments / Lifecycle</div>
+  <div class="arrow">→</div>
+  <div class="item">ViewModel / LiveData / Jetpack</div>
+  <div class="arrow">→</div>
+  <div class="item">Networking (Retrofit / Volley)</div>
+  <div class="arrow">→</div>
+  <div class="item">Firebase / Room DB / SQLite</div>
+</div>
+<div class="section genai">
+  <h2>Generative AI</h2>
+  <div class="item">Python / Transformers / Hugging Face</div>
+  <div class="arrow">→</div>
+  <div class="item">NLP Basics (Tokenization / Embeddings)</div>
+  <div class="arrow">→</div>
+  <div class="item">LLMs (GPT / BERT / T5)</div>
+  <div class="arrow">→</div>
+  <div class="item">Fine-tuning / Prompt Engineering</div>
+  <div class="arrow">→</div>
+  <div class="item">Text Generation / Summarization / Q&A</div>
+  <div class="arrow">→</div>
+  <div class="item">Image Generation (Diffusion / GANs)</div>
+  <div class="arrow">→</div>
+  <div class="item">Deployment (Streamlit / Gradio / APIs)</div>
+</div>
+
+<section id="interview-pdf">
+  <div class="section-title">Most Asked Interview Questions</div>
+
+  <div class="languages-container">
+    <!-- Existing and new boxes -->
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <h3>HTML</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://drive.google.com/file/d/1tyg3hprUVdOrOS0UXYt4ErNDNXzFAz5k/view?usp=sharing" download>
+        <button class="btn btn-download">Download PDF</button>
+        
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <h3>CSS</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://drive.google.com/file/d/1JWOLkVi6l95jcPzoHguhnSBL3uaTQN4V/view?usp=sharing" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <h3>JavaScript</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/React-JS-interview-Questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="DBMS">
+      <h3>DBMS</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://drive.google.com/file/d/1FJAQBlF1Bz-mZwGTA6W0QyWrVgHkhUWh/view?usp=sharing" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="./images/icons8-python-94.png" alt="DBMS">
+      <h3>Python</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://drive.google.com/drive/folders/1MT9EGCtmRAprTJKgt3QWV0L93-4pyvEz?usp=sharing" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <!-- Keep existing boxes -->
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <h3>React</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/React-JS-interview-Questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+      <h3>Android</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/TOP-30-Android-Developer-Interview-Questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Operating System">
+      <h3>Operating System</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/Top-50-OS-Interview-Questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <h3>Git</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/Top-30-Git-Interview-Question.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="./Images/ccna.png" alt="Computer Network">
+      <h3>Computer Network</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/Top-50-CN-Interview-Questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="./Images/HR-Management-Systems-scaled.webp" alt="HR Questions">
+      <h3>HR Questions</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/HR-interview-questions.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="./Images/DevOps.jpg" alt="DevOps">
+      <h3>DevOps</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/Devops-Interview-Question.pdf" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+      <div class="language-box">
+      <img src="./Images/dsa.jpg" alt="DSA">
+      <h3>Data Structures & Algorithms</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/DSA_Month-Wise" download>
+        <button class="btn btn-download">Download PDF</button>
+      </div>
+    </div>
+    <div class="language-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+      <h3>C++</h3>
+      <div class="buttons">
+        <button class="btn btn-info">Info</button>
+        <a href="https://github.com/Rajayush2167/Interview-preparation/blob/main/Cinterview-questions.pdf" download>
+          <button class="btn btn-download">Download PDF</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+      </div>
+      <!-- Back -->
+      <div class="card-back-3d">
+        <h3>About Me</h3>
+        <p>Experienced in C++, Python, Laravel, MySQL, and Web Development.</p>
+        <p>Passionate about building clean, scalable software.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Floating text -->
+  <div class="floating-text" style="left: 10%; animation-delay: 0s;">C++</div>
+  <div class="floating-text" style="left: 25%; animation-delay: 3s;">Laravel</div>
+  <div class="floating-text" style="left: 40%; animation-delay: 6s;">DBMS</div>
+  <div class="floating-text" style="left: 55%; animation-delay: 1s;">OS</div>
+  <div class="floating-text" style="left: 70%; animation-delay: 5s;">DSA</div>
+  <div class="floating-text" style="left: 85%; animation-delay: 7s;">Networking</div>
+    <div class="floating-text" style="left: 85%; animation-delay: 7s;">Html</div>
+     <div class="floating-text" style="left: 85%; animation-delay: 7s;">Css</div>
+      <div class="floating-text" style="left: 85%; animation-delay: 7s;">Javascript</div>
+       <div class="floating-text" style="left: 85%; animation-delay: 7s;">React Js</div>
+        <div class="floating-text" style="left: 85%; animation-delay: 7s;">Mongo DB</div>
+         <div class="floating-text" style="left: 85%; animation-delay: 7s;">Express Js</div>
+
+  <!-- Floating icons -->
+  <div class="floating-icon" style="left: 20%; animation-delay: 1s;">💻</div>
+  <div class="floating-icon" style="left: 40%; animation-delay: 3s;">🪑</div>
+  <div class="floating-icon" style="left: 60%; animation-delay: 5s;">👨‍💻</div>
+  <div class="floating-icon" style="left: 80%; animation-delay: 7s;">🖥</div>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <div class="sidebar">
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+    </div>
+  
+   
+    <section id="courses-pdf">
+    <div class="content">
+      <div class="top-bar">
+        <input type="text" id="course-search" class="search-input" placeholder="Search Courses..." onkeyup="searchCourses()">
+      </div>
+
+      <!-- Course cards -->
+      <div class="course-card" data-course="C++ Programming">
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Logo">
+          <h3><b>C++ Programming</b></h3>
+          <div class="button-group">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href=" https://drive.google.com/file/d/1tmkTloq_7GxMcS8e1pVBvQh9pKc9sAVe/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="course-card" data-course="Python">
+        <div class="card">
+          <img src="./images/icons8-python-94.png" alt="Data Structures & Algorithms">
+          <h3>DBMS</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about DBMS">Info</button>
+            <a href="https://drive.google.com/drive/folders/1ze1ltOrb6QAe-nGv0UT7xewpkzYGhzMk?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+     
+      <div class="course-card" data-course="Laravel">
+        <div class="card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel Logo">
+          <h3>Laravel</h3>
+          <div class="button-group">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href="https://laraveldaily.com/lesson/laravel-beginners/install-composer-installer" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="course-card" data-course="Html">
+        <div class="card">
+          <img src="./Images/html5-icon-12116.png" alt="">
+          <h3>Html</h3>
+          <div class="button-group">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href="https://drive.google.com/file/d/1wQZ09Kf1IwEhS8H8iitVD5SiUsEOcrNQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-course="CSS">
+        <div class="card">
+          <img src="./Images/vecteezy_stylized-3d-css-icon-side-view_11665094.png" alt="">
+          <h3>CSS</h3>
+          <div class="button-group">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href="https://drive.google.com/file/d/1h21QAyV1WC1iSsMPyK7ix5ZsB_PAIhuV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+           
+      <div class="course-card" data-course="Javascript">
+        <div class="card">
+          <img src="./Images/javascript.png" alt="Javascript">
+          <h3>Javascript</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href="https://drive.google.com/file/d/1oJdfltf9JXED3lR_p2hwDN47uiGuc_zA/view" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="course-card" data-course="React Js">
+        <div class="card">
+          <img src="./Images/react.png" alt="React Js">
+          <h3>React Js</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about Javascript">Info</button>
+            <a href="https://drive.google.com/file/d/1E5i_NofUihEfKcGd9o3LhQ4Nioi5oMz1/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-course="Data Structures & Algorithms">
+        <div class="card">
+          <img src="./Images/connection.png" alt="Data Structures & Algorithms">
+          <h3>DSA</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about Data Structures & Algorithms">Info</button>
+            <a href="https://drive.google.com/file/d/1oJdfltf9JXED3lR_p2hwDN47uiGuc_zA/view" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card" data-course=" Computer Networking">
+        <div class="card">
+          <img src="./Images/computer.png" alt="Data Structures & Algorithms">
+          <h3>Computer Networking</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about Computer Networking">Info</button>
+            <a href="https://drive.google.com/file/d/1oJdfltf9JXED3lR_p2hwDN47uiGuc_zA/view" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="course-card" data-course="Operating System">
+        <div class="card">
+          <img src="./Images/system-integration.png" alt="Data Structures & Algorithms">
+          <h3>Operating System</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about Operating System">Info</button>
+            <a href="https://drive.google.com/file/d/1Fmb_8CN_UC6OTg82h6aInB7ahPgIt7xS/view" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="course-card" data-course="DBMS">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="Data Structures & Algorithms">
+          <h3>DBMS</h3>
+          <div class="button-group" role="group" aria-label="Course actions">
+            <button class="btn btn-info" aria-label="More information about DBMS">Info</button>
+            <a href="https://drive.google.com/file/d/1eHyd61xBoi5_rJ0TbqjnfxJDsyCwQkut/view" target="_blank" rel="noopener noreferrer">
+              <button class="btn btn-download" aria-label="Download Networking course materials">Download Pdf</button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+     
+     <!-- Floating icons -->
+<div class="floating-icon" style="left: 20%; animation-delay: 1s;">💻</div>
+<div class="floating-icon" style="left: 40%; animation-delay: 3s;">🪑</div>
+<div class="floating-icon" style="left: 60%; animation-delay: 5s;">👨‍💻</div>
+<div class="floating-icon" style="left: 80%; animation-delay: 7s;">🖥</div>
+
+<!-- Additional Floating Icons -->
+<div class="floating-icon" style="left: 10%; animation-delay: 2s;">📘</div>
+<div class="floating-icon" style="left: 30%; animation-delay: 4s;">📡</div>
+<div class="floating-icon" style="left: 50%; animation-delay: 6s;">🗃️</div>
+<div class="floating-icon" style="left: 70%; animation-delay: 8s;">🧠</div>
+<div class="floating-icon" style="left: 90%; animation-delay: 10s;">📊</div>
+
+  <!-- Scroll Buttons -->
+  <button id="scroll-up" class="scroll-btn">↑</button>
+  <button id="scroll-down" class="scroll-btn">↓</button>
+
+  <!-- Footer -->
+     
+  <footer class="footer">
+    <p>Website Owned by <span>Raj Ayush</span></p>
+  </footer>
+  
+  <script>
+    function searchCourses() {
+      var input = document.getElementById('course-search').value.toLowerCase();
+      var cards = document.getElementsByClassName('course-card');
+
+      for (var i = 0; i < cards.length; i++) {
+        var courseName = cards[i].getAttribute('data-course').toLowerCase();
+        cards[i].style.display = courseName.includes(input) ? '' : 'none';
+      }
+    }
+
+    document.getElementById('scroll-up').onclick = function () {
+      window.scrollBy({ top: -300, behavior: 'smooth' });
+    };
+
+    document.getElementById('scroll-down').onclick = function () {
+      window.scrollBy({ top: 300, behavior: 'smooth' });
+    };
+  </script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 }},
+      color: { value: "#ff00ff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#ff00ff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: { enable: true, speed: 2 }
+    },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      },
+      modes: {
+        repulse: { distance: 100 },
+        push: { particles_nb: 4 }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+<script>
+        const toggleBtn = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close menu when clicking on nav links (for mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
